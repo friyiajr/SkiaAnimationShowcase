@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  Platform,
+  SafeAreaView,
+} from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
 import { useNavigation } from "@react-navigation/native";
@@ -13,7 +20,7 @@ export const Home = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={Object.values(AnimationScreenNames)}
         renderItem={({ item }) => {
@@ -26,7 +33,7 @@ export const Home = () => {
           );
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

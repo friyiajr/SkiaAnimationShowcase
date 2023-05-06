@@ -7,6 +7,7 @@ import { ExpoPulse } from "../ExpoPulse";
 import { LineChart } from "../LineChart";
 import { MorphingCircle } from "../MorphingCircle";
 import { VitalSignMonitor } from "../VitalSignMonitor";
+import { WaveMeter } from "../WaveMeter";
 
 interface Screen {
   name: string;
@@ -14,6 +15,7 @@ interface Screen {
 }
 
 export const AnimationScreenNames = {
+  WAVE_METER: "Wave Meter",
   LINE_CHART: "Line Chart",
   BAR_CHART: "Bar Chart",
   DONUT_CHART: "Donut Chart",
@@ -25,6 +27,10 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.WAVE_METER,
+    component: WaveMeter,
+  },
   {
     name: AnimationScreenNames.DONUT_CHART,
     component: DonutChartContainer,

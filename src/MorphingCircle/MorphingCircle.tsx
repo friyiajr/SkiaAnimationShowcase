@@ -107,7 +107,7 @@ export const MorphingCircle = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Canvas style={styles.canvas}>
-        <Path path={path} color="blue">
+        <Path path={path}>
           <LinearGradient
             start={vec(0, 0)}
             end={colorNoise}

@@ -7,6 +7,7 @@ import {
 import React from "react";
 import { PixelRatio, Pressable, StyleSheet, Text, View } from "react-native";
 import { DonutChart } from "./DonutChart";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const radius = PixelRatio.roundToNearestPixel(130);
 const STROKE_WIDTH = 12;
@@ -34,7 +35,7 @@ export const DonutChartContainer = () => {
     <View style={styles.container}>
       <View style={styles.ringChartContainer}>
         <DonutChart
-          backgroundColor="purple"
+          backgroundColor="white"
           radius={radius}
           strokeWidth={STROKE_WIDTH}
           percentageComplete={animationState}
@@ -43,9 +44,9 @@ export const DonutChartContainer = () => {
           smallerFont={smallerFont}
         />
       </View>
-      <Pressable onPress={animateChart} style={styles.button}>
+      <TouchableOpacity onPress={animateChart} style={styles.button}>
         <Text style={styles.buttonText}>Animate !</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
   },
   ringChartContainer: {
     width: radius * 2,

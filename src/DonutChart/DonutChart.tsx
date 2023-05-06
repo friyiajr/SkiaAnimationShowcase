@@ -56,6 +56,7 @@ export const DonutChart: FC<CircularProgressProps> = ({
           text={targetText}
           font={font}
           opacity={percentageComplete}
+          color="black"
         />
         <Text
           x={innerRadius - titleWidth / 2}
@@ -63,6 +64,7 @@ export const DonutChart: FC<CircularProgressProps> = ({
           text={"Power"}
           font={smallerFont}
           opacity={percentageComplete}
+          color="black"
         />
       </Canvas>
     </View>

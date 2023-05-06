@@ -2,12 +2,13 @@ import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
 
-import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { Home } from "./src/Home";
-import DonutChartContainer from "./src/DonutChart";
-import { allScreens } from "./src/NavigationHelpers/NavigationHelpers";
+import {
+  AnimationScreenNames,
+  allScreens,
+} from "./src/NavigationHelpers/NavigationHelpers";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -21,18 +22,19 @@ export default function App() {
             key={index}
             name={screen.name}
             component={screen.component}
+            options={
+              screen.name === AnimationScreenNames.WAVE_METER
+                ? {
+                    headerTintColor: "#fff",
+                    headerStyle: {
+                      backgroundColor: "black",
+                    },
+                  }
+                : undefined
+            }
           />
         ))}
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
