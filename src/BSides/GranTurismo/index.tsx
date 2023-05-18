@@ -15,7 +15,7 @@ const STROKE_WIDTH = 7;
 export const GranTurismo = () => {
   // TODO: Make targetPercentage 1 when the newest Skia version 0.190.0 is
   // released on Expo GO. Saturate was recommended as a workaround but for
-  // this usecase it was easier to just use a slightly lower number
+  // this use case it was easier to just use a slightly lower number
   // than 1
   //
   // See - https://github.com/Shopify/react-native-skia/issues/1584
@@ -52,8 +52,8 @@ export const GranTurismo = () => {
     );
   };
 
-  const font = useFont(require("../../bruno.ttf"), 110);
-  const startFont = useFont(require("../../bruno.ttf"), 60);
+  const font = useFont(require("../../../bruno.ttf"), 110);
+  const startFont = useFont(require("../../../bruno.ttf"), 60);
 
   if (!font || !startFont) {
     return <View />;

@@ -3,20 +3,15 @@ import { BarChart } from "../BarChart";
 import { Confetti } from "../Confetti";
 import DonutChartContainer from "../DonutChart";
 import { ExpoPulse } from "../ExpoPulse";
-import GranTurismo from "../GranTurismo";
 
 import { LineChart } from "../LineChart";
 import { MorphingCircle } from "../MorphingCircle";
 import { VitalSignMonitor } from "../VitalSignMonitor";
 import { WaveMeter } from "../WaveMeter";
 
-interface Screen {
-  name: string;
-  component: () => JSX.Element;
-}
+import { Screen } from "../../Utils/Screen";
 
 export const AnimationScreenNames = {
-  GRAN_TURISMO_COUNTDOWN: "Gran Turismo Countdown 🏎",
   WAVE_METER: "Wave Meter 🌊",
   LINE_CHART: "Line Chart 📈",
   BAR_CHART: "Bar Chart 📊",
@@ -29,10 +24,6 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
-  {
-    name: AnimationScreenNames.GRAN_TURISMO_COUNTDOWN,
-    component: GranTurismo,
-  },
   {
     name: AnimationScreenNames.WAVE_METER,
     component: WaveMeter,

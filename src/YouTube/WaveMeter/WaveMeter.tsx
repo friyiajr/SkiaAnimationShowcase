@@ -39,7 +39,7 @@ export const WaveMeter = () => {
   const verticalShift = useValue(verticalShiftConst);
   const amplitude = useValue(initialAmplitude);
   const clock = useClockValue();
-  const font = useFont(require("../../bruno.ttf"), 20);
+  const font = useFont(require("../../../bruno.ttf"), 20);
 
   const touchHandler = useTouchHandler({
     onActive: ({ y }) => {

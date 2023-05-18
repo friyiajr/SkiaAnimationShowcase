@@ -42,7 +42,7 @@ const graphHeight = CanvasHeight - 2 * GRAPH_MARGIN;
 const graphWidth = CanvasWidth - 2;
 
 export const BarChart = () => {
-  const font = useFont(require("../../Roboto-Bold.ttf"), 10);
+  const font = useFont(require("../../../Roboto-Bold.ttf"), 10);
   const animationState = useValue(0);
 
   const xDomain = data.map((dataPoint: DataPoint) => dataPoint.label);

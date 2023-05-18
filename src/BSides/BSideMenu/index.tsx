@@ -10,9 +10,9 @@ import {
 import { FlatList } from "react-native-gesture-handler";
 
 import { useNavigation } from "@react-navigation/native";
-import { AnimationScreenNames } from "../NavigationHelpers/NavigationHelpers";
+import { AnimationScreenNames } from "../NavigationHelpers";
 
-export const Home = () => {
+export const BSideMenu = () => {
   const nav = useNavigation<any>();
 
   const goToScreen = (name: string) => {
@@ -27,7 +27,7 @@ export const Home = () => {
           return (
             <Pressable onPress={() => goToScreen(item)} style={styles.button}>
               <View style={styles.exampleCell}>
-                <Text>{item}</Text>
+                <Text style={styles.cellText}>{item}</Text>
               </View>
             </Pressable>
           );
@@ -40,23 +40,26 @@ export const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "black",
   },
   button: {
     height: 100,
-    backgroundColor: "white",
+    backgroundColor: "black",
+  },
+  cellText: {
+    color: "white",
   },
   exampleCell: {
     borderRadius: 8,
     marginHorizontal: 30,
     marginVertical: 8,
-    backgroundColor: "white",
+    backgroundColor: "black",
     flex: 1,
-    shadowColor: Platform.OS === "android" ? "grey" : "lightgrey",
-    shadowOffset: { width: 2, height: 2 },
+    shadowColor: Platform.OS === "ios" ? "darkgrey" : "white",
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.9,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 20,
     justifyContent: "center",
     alignItems: "center",
   },
