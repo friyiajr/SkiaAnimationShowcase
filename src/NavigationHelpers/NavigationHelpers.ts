@@ -3,6 +3,7 @@ import { BarChart } from "../BarChart";
 import { Confetti } from "../Confetti";
 import DonutChartContainer from "../DonutChart";
 import { ExpoPulse } from "../ExpoPulse";
+import GranTurismo from "../GranTurismo";
 
 import { LineChart } from "../LineChart";
 import { MorphingCircle } from "../MorphingCircle";
@@ -15,18 +16,23 @@ interface Screen {
 }
 
 export const AnimationScreenNames = {
-  WAVE_METER: "Wave Meter",
-  LINE_CHART: "Line Chart",
-  BAR_CHART: "Bar Chart",
-  DONUT_CHART: "Donut Chart",
-  MORPHING_CIRCLE: "Morphing Circle",
-  CONFETTI: "Confetti",
-  TOUCH_INTERACTIONS: "Touch Interactions",
-  EXPO_PULSE: "Expo Pulse",
-  VITAL_SIGN_MONITOR: "Vital Sign Monitor",
+  GRAN_TURISMO_COUNTDOWN: "Gran Turismo Countdown 🏎",
+  WAVE_METER: "Wave Meter 🌊",
+  LINE_CHART: "Line Chart 📈",
+  BAR_CHART: "Bar Chart 📊",
+  DONUT_CHART: "Donut Chart 🍩",
+  MORPHING_CIRCLE: "Morphing Circle ⭕️",
+  CONFETTI: "Confetti 🎊",
+  TOUCH_INTERACTIONS: "Touch Interactions 👍",
+  EXPO_PULSE: "Expo Pulse 💙",
+  VITAL_SIGN_MONITOR: "Vital Sign Monitor ❤️",
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.GRAN_TURISMO_COUNTDOWN,
+    component: GranTurismo,
+  },
   {
     name: AnimationScreenNames.WAVE_METER,
     component: WaveMeter,
