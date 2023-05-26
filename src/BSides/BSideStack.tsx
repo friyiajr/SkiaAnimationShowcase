@@ -1,9 +1,10 @@
 import "react-native-gesture-handler";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import GranTurismo from "./GranTurismo";
-import { BSideMenu } from "./BSideMenu";
 import { Platform } from "react-native";
+import { Screen } from "../Utils/Screen";
+import { BSideMenu } from "./BSideMenu";
+import { allScreens } from "./NavigationHelpers";
 
 export default function BSideStack() {
   const Stack = createStackNavigator();
@@ -22,7 +23,15 @@ export default function BSideStack() {
       }}
     >
       <Stack.Screen name="B-Side Menu" component={BSideMenu} />
-      <Stack.Screen name="Gran Turismo Countdown 🏎" component={GranTurismo} />
+      {allScreens.map((screen: Screen, index: number) => {
+        return (
+          <Stack.Screen
+            key={index.toString()}
+            name={screen.name}
+            component={screen.component}
+          />
+        );
+      })}
     </Stack.Navigator>
   );
 }
