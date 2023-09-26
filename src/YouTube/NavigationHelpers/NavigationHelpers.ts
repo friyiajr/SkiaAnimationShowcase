@@ -10,8 +10,10 @@ import { VitalSignMonitor } from "../VitalSignMonitor";
 import { WaveMeter } from "../WaveMeter";
 
 import { Screen } from "../../Utils/Screen";
+import { NeumorphicButton } from "../NeumorphicButton/NeumorphicButton";
 
 export const AnimationScreenNames = {
+  NEUMORPHIC_BUTTON: "Neumorphic Button 🔘",
   WAVE_METER: "Wave Meter 🌊",
   LINE_CHART: "Line Chart 📈",
   BAR_CHART: "Bar Chart 📊",
@@ -24,6 +26,10 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.NEUMORPHIC_BUTTON,
+    component: NeumorphicButton,
+  },
   {
     name: AnimationScreenNames.WAVE_METER,
     component: WaveMeter,
