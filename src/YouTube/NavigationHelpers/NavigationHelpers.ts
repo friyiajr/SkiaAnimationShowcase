@@ -10,12 +10,10 @@ import { VitalSignMonitor } from "../VitalSignMonitor";
 import { WaveMeter } from "../WaveMeter";
 
 import { Screen } from "../../Utils/Screen";
-import { NeumorphicButton } from "../NeumorphicButton/NeumorphicButton";
 import { ChasingBubbles } from "../ChasingBubbles/ChasingBubbles";
 
 export const AnimationScreenNames = {
   CHASING_BUBBLES: "Chasing Bubbles 🫧",
-  NEUMORPHIC_BUTTON: "Neumorphic Button 🔘",
   WAVE_METER: "Wave Meter 🌊",
   LINE_CHART: "Line Chart 📈",
   BAR_CHART: "Bar Chart 📊",
@@ -31,10 +29,6 @@ export const allScreens: Screen[] = [
   {
     name: AnimationScreenNames.CHASING_BUBBLES,
     component: ChasingBubbles,
-  },
-  {
-    name: AnimationScreenNames.NEUMORPHIC_BUTTON,
-    component: NeumorphicButton,
   },
   {
     name: AnimationScreenNames.WAVE_METER,
