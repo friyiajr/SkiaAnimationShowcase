@@ -19,7 +19,8 @@ export default function YouTubeStack() {
           name={screen.name}
           component={screen.component}
           options={
-            screen.name === AnimationScreenNames.WAVE_METER
+            screen.name === AnimationScreenNames.WAVE_METER ||
+            screen.name === AnimationScreenNames.BENDING_CIRCLE
               ? {
                   headerTintColor: "#fff",
                   headerStyle: {

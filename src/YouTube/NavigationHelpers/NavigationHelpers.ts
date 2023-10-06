@@ -11,8 +11,10 @@ import { WaveMeter } from "../WaveMeter";
 
 import { Screen } from "../../Utils/Screen";
 import { ChasingBubbles } from "../ChasingBubbles/ChasingBubbles";
+import { BendingCircle } from "../BendingCircle/BendingCircle";
 
 export const AnimationScreenNames = {
+  BENDING_CIRCLE: "Bending Circle 🛟",
   CHASING_BUBBLES: "Chasing Bubbles 🫧",
   WAVE_METER: "Wave Meter 🌊",
   LINE_CHART: "Line Chart 📈",
@@ -26,6 +28,10 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.BENDING_CIRCLE,
+    component: BendingCircle,
+  },
   {
     name: AnimationScreenNames.CHASING_BUBBLES,
     component: ChasingBubbles,
