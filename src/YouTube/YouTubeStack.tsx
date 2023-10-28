@@ -10,6 +10,25 @@ import {
 export default function YouTubeStack() {
   const Stack = createStackNavigator();
 
+  const getScreenConfig = (screen: string) => {
+    switch (screen) {
+      case AnimationScreenNames.WAVE_METER:
+      case AnimationScreenNames.BENDING_CIRCLE:
+        return {
+          headerTintColor: "#fff",
+          headerStyle: {
+            backgroundColor: "black",
+          },
+        };
+      case AnimationScreenNames.GRADIENT_CLOCK:
+        return {
+          headerShown: false,
+        };
+      default:
+        return undefined;
+    }
+  };
+
   return (
     <Stack.Navigator>
       <Stack.Screen name="YouTube Demos" component={Home} />
@@ -18,17 +37,7 @@ export default function YouTubeStack() {
           key={index}
           name={screen.name}
           component={screen.component}
-          options={
-            screen.name === AnimationScreenNames.WAVE_METER ||
-            screen.name === AnimationScreenNames.BENDING_CIRCLE
-              ? {
-                  headerTintColor: "#fff",
-                  headerStyle: {
-                    backgroundColor: "black",
-                  },
-                }
-              : undefined
-          }
+          options={getScreenConfig(screen.name)}
         />
       ))}
     </Stack.Navigator>

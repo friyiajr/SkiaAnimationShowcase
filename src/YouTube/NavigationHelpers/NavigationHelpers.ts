@@ -13,8 +13,10 @@ import { Screen } from "../../Utils/Screen";
 import { ChasingBubbles } from "../ChasingBubbles/ChasingBubbles";
 import { BendingCircle } from "../BendingCircle/BendingCircle";
 import { NeumorphicButton } from "../NeumorphicButton";
+import { GradientClock } from "../GradientClock";
 
 export const AnimationScreenNames = {
+  GRADIENT_CLOCK: "Gradient Clock 🕗",
   BENDING_CIRCLE: "Bending Circle 🛟",
   CHASING_BUBBLES: "Chasing Bubbles 🫧",
   WAVE_METER: "Wave Meter 🌊",
@@ -30,6 +32,10 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.GRADIENT_CLOCK,
+    component: GradientClock,
+  },
   {
     name: AnimationScreenNames.BENDING_CIRCLE,
     component: BendingCircle,
