@@ -21,6 +21,7 @@ export default function YouTubeStack() {
           },
         };
       case AnimationScreenNames.GRADIENT_CLOCK:
+      case AnimationScreenNames.FOCUS_ANIMATION:
         return {
           headerShown: false,
         };

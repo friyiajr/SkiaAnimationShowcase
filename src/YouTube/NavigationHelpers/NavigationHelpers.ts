@@ -14,8 +14,10 @@ import { ChasingBubbles } from "../ChasingBubbles/ChasingBubbles";
 import { BendingCircle } from "../BendingCircle/BendingCircle";
 import { NeumorphicButton } from "../NeumorphicButton";
 import { GradientClock } from "../GradientClock";
+import { FocusAnimation } from "../FocusAnimation";
 
 export const AnimationScreenNames = {
+  FOCUS_ANIMATION: "Focus Animation 🔎",
   GRADIENT_CLOCK: "Gradient Clock 🕗",
   BENDING_CIRCLE: "Bending Circle 🛟",
   CHASING_BUBBLES: "Chasing Bubbles 🫧",
@@ -32,6 +34,10 @@ export const AnimationScreenNames = {
 };
 
 export const allScreens: Screen[] = [
+  {
+    name: AnimationScreenNames.FOCUS_ANIMATION,
+    component: FocusAnimation,
+  },
   {
     name: AnimationScreenNames.GRADIENT_CLOCK,
     component: GradientClock,
