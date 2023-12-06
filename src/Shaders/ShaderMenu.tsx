@@ -4,40 +4,15 @@ import {
   Text,
   Pressable,
   StyleSheet,
-  SafeAreaView,
-  FlatList,
   Platform,
+  SafeAreaView,
 } from "react-native";
-
-import { Screen } from "./Utils/Screen";
+import { FlatList } from "react-native-gesture-handler";
 
 import { useNavigation } from "@react-navigation/native";
-import YouTubeStack from "./YouTube/YouTubeStack";
-import BSideStack from "./BSides/BSideStack";
-import ShaderStack from "./Shaders/ShaderStack";
+import { AnimationScreenNames } from "./NavigationHelpers";
 
-export const AnimationScreenNames = {
-  YOUTUBE_STACK: "YouTube Demos 🎥",
-  SHADER_STACK: "YouTube Shaders 🖍",
-  B_SIDE_STACK: "B-Side Nav 💿",
-};
-
-export const allScreens: Screen[] = [
-  {
-    name: "YouTube Demos 🎥",
-    component: YouTubeStack,
-  },
-  {
-    name: "YouTube Shaders 🖍",
-    component: ShaderStack,
-  },
-  {
-    name: "B-Side Nav 💿",
-    component: BSideStack,
-  },
-];
-
-export const HomeScreen = () => {
+export const ShaderMenu = () => {
   const nav = useNavigation<any>();
 
   const goToScreen = (name: string) => {
@@ -48,7 +23,6 @@ export const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <FlatList
         data={Object.values(AnimationScreenNames)}
-        style={styles.flatListContainer}
         renderItem={({ item }) => {
           return (
             <Pressable onPress={() => goToScreen(item)} style={styles.button}>
@@ -66,29 +40,26 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-  },
-  flatListContainer: {
-    marginTop: 70,
+    backgroundColor: "black",
   },
   button: {
     height: 100,
-    backgroundColor: "white",
+    backgroundColor: "black",
   },
   cellText: {
-    color: "black",
+    color: "white",
   },
   exampleCell: {
     borderRadius: 8,
     marginHorizontal: 30,
     marginVertical: 8,
-    backgroundColor: "white",
+    backgroundColor: "black",
     flex: 1,
-    shadowColor: Platform.OS === "ios" ? "darkgrey" : "black",
+    shadowColor: Platform.OS === "ios" ? "darkgrey" : "white",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.9,
     shadowRadius: 5,
-    elevation: 5,
+    elevation: 20,
     justifyContent: "center",
     alignItems: "center",
   },
