@@ -24,7 +24,7 @@ export default function App() {
         <Stack.Screen name="Menu" component={HomeScreen} />
         <Stack.Screen name="B-Side Nav 💿" component={BSideStack} />
         <Stack.Screen name="YouTube Demos 🎥" component={YouTubeStack} />
-        <Stack.Screen name="YouTube Shaders 🖍" component={ShaderStack} />
+        <Stack.Screen name="Shaders 🖍" component={ShaderStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

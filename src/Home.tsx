@@ -18,7 +18,7 @@ import ShaderStack from "./Shaders/ShaderStack";
 
 export const AnimationScreenNames = {
   YOUTUBE_STACK: "YouTube Demos 🎥",
-  SHADER_STACK: "YouTube Shaders 🖍",
+  SHADER_STACK: "Shaders 🖍",
   B_SIDE_STACK: "B-Side Nav 💿",
 };
 
@@ -28,7 +28,7 @@ export const allScreens: Screen[] = [
     component: YouTubeStack,
   },
   {
-    name: "YouTube Shaders 🖍",
+    name: "Shaders 🖍",
     component: ShaderStack,
   },
   {
