@@ -45,10 +45,6 @@ export const ArcSlider = () => {
   const previousPositionY = useSharedValue(y2);
   const percentComplete = useSharedValue(0);
 
-  const skiaCx = useValue(x2);
-  const skiaCy = useValue(y2);
-  const skiaPercentComplete = useValue(0);
-
   const gesture = Gesture.Pan()
     .onUpdate(({ translationX, translationY, absoluteX }) => {
       const oldCanvasX = translationX + previousPositionX.value;
@@ -90,17 +86,6 @@ export const ArcSlider = () => {
       previousPositionY.value = movableCy.value;
     });
 
-  useSharedValueEffect(
-    () => {
-      skiaCx.current = movableCx.value;
-      skiaCy.current = movableCy.value;
-      skiaPercentComplete.current = percentComplete.value;
-    },
-    movableCx,
-    movableCy,
-    percentComplete
-  );
-
   const style = useAnimatedStyle(() => {
     return { height: 200, width: 300, opacity: percentComplete.value };
   }, [percentComplete]);
@@ -132,16 +117,22 @@ export const ArcSlider = () => {
               strokeCap="round"
               color={"orange"}
               start={0}
-              end={skiaPercentComplete}
+              end={percentComplete}
             />
             <Circle
-              cx={skiaCx}
-              cy={skiaCy}
+              cx={movableCx}
+              cy={movableCy}
               r={20}
               color="orange"
               style="fill"
             />
-            <Circle cx={skiaCx} cy={skiaCy} r={15} color="white" style="fill" />
+            <Circle
+              cx={movableCx}
+              cy={movableCy}
+              r={15}
+              color="white"
+              style="fill"
+            />
           </Canvas>
         </View>
       </GestureDetector>
